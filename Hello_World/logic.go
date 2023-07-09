@@ -3,5 +3,7 @@ package Hello_World
 import "fmt"
 
 func print(sentence string) {
-	fmt.Println(sentence)
+	sentence_copy, _ := sentence, username
+
+	fmt.Println(sentence_copy)
 }
