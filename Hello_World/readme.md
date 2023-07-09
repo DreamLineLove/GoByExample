@@ -1,4 +1,9 @@
 # Hello World
+ 🌐 <a href="https://gobyexample.com/hello-world">"Go by Examples" link</a>
+ <br>
+ 🌐 <a href="https://pkg.go.dev/fmt#Println">fmt.Println()</a>
+
+
 
 ## Expectations
 1. import package "fmt" with quotes
