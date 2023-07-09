@@ -41,17 +41,25 @@ func Errors() {
 		fmt.Println("error not found! we will proceed to other logic!")
 	}
 
-	if err := complex_error_return(true); err != nil {
+	var err error
+
+	if err = complex_error_return(true); err != nil {
+		fmt.Println("error returned!", err)
+		fmt.Println(errors.Unwrap(err))
+	} else {
+		fmt.Println("proceeding withut any errors!")
+	}
+
+	if err = complex_error_return(false); err != nil {
 		fmt.Println("error returned!", err)
 	} else {
 		fmt.Println("proceeding withut any errors!")
 	}
 
-	if err := complex_error_return(false); err != nil {
-		fmt.Println("error returned!", err)
-	} else {
-		fmt.Println("proceeding withut any errors!")
-	}
+	error2 := errors.New("error2")
+	error1 := fmt.Errorf("error1, inner: %w", error2)
+	outerError := fmt.Errorf("outer. inner: %w", error1)
+	fmt.Println(errors.Unwrap(outerError))
 }
 
 func simple_error_return(message string, should_return bool) (string, error) {
