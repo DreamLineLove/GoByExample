@@ -58,7 +58,9 @@ func Errors() {
 
 	error2 := errors.New("error2")
 	error1 := fmt.Errorf("error1, inner: %w", error2)
-	outerError := fmt.Errorf("outer. inner: %w", error1)
+	outerError := fmt.Errorf("outer. inner: %w %w", error1, error2)
+	// fmt.Println(errors.Unwrap(outerError))
+	fmt.Println(outerError)
 	fmt.Println(errors.Unwrap(outerError))
 }
 

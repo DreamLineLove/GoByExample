@@ -22,5 +22,6 @@ func main() {
 
 	write_title("Errors")
 	Errors.Errors()
+	Errors.Custom_errors()
 	new_line()
 }
