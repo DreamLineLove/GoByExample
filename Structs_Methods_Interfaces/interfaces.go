@@ -6,6 +6,6 @@ type teacher interface {
 	calculate_DOB() int
 }
 
-func print_DOB(t teacher) {
-	fmt.Println("the teacher's birthday is", t.calculate_DOB(), "!")
+func Print_teacher_details(name string, t teacher) {
+	fmt.Print("Teacher ", name, "'s birthday is ", t.calculate_DOB(), "!\n")
 }
