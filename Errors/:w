@@ -40,18 +40,6 @@ func Errors() {
 	} else {
 		fmt.Println("error not found! we will proceed to other logic!")
 	}
-
-	if err := complex_error_return(true); err != nil {
-		fmt.Println("error returned!", err)
-	} else {
-		fmt.Println("proceeding withut any errors!")
-	}
-
-	if err := complex_error_return(false); err != nil {
-		fmt.Println("error returned!", err)
-	} else {
-		fmt.Println("proceeding withut any errors!")
-	}
 }
 
 func simple_error_return(message string, should_return bool) (string, error) {
@@ -59,20 +47,5 @@ func simple_error_return(message string, should_return bool) (string, error) {
 		return "error was returned: ", errors.New(message)
 	} else {
 		return "error was not returned: ", nil
-	}
-}
-
-func return_error(name string) error {
-	return errors.New(name)
-}
-
-func complex_error_return(should_return bool) error {
-	if should_return {
-		database := return_error("database error!")
-		fetch := return_error("fetch failed!")
-		fileOpen := return_error("unable to open file!")
-		return fmt.Errorf("outer error, inner errors: %w %w %w", database, fetch, fileOpen)
-	} else {
-		return nil
 	}
 }
