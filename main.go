@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/DreamLineLove/GoByExample/Errors"
 	"github.com/DreamLineLove/GoByExample/Hello_World"
 	"github.com/DreamLineLove/GoByExample/Structs_Methods_Interfaces"
 )
@@ -17,5 +18,9 @@ func main() {
 	Structs_Methods_Interfaces.Structs_Methods_Interfaces()
 	Structs_Methods_Interfaces.Print_teacher_details(Structs_Methods_Interfaces.Tr_eiphyo.Name, Structs_Methods_Interfaces.Tr_eiphyo)
 	Structs_Methods_Interfaces.Print_teacher_details(Structs_Methods_Interfaces.Tr_helen.Name, Structs_Methods_Interfaces.Tr_helen)
+	new_line()
+
+	write_title("Errors")
+	Errors.Errors()
 	new_line()
 }
