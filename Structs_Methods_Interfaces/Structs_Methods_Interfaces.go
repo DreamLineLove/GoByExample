@@ -33,4 +33,9 @@ func Structs_Methods_Interfaces() {
 		fmt.Println("I kinda don't like them")
 	}
 
+	print_teacher_details_all(&goethe_teacher{
+		Name:                  "Soe Nyan Naing",
+		highest_qualification: "Grunes Diplom",
+		age:                   33,
+	})
 }
