@@ -10,6 +10,7 @@
 4. %w only accepts error values.
 5. %v also accepts errors but does not implement the Unwrap() method.
 6. You can include both the function call and its variables, as well as the testing logic for the returned error variable, on the same line in an if statement, separated by the ';'.
+7. You can call a function, accept return values (including errors) as variables, and write error-handling logic, all on the same line in an if statement.   
 
 ## Other Findings
 1. To implement error interface on any custom type you must implement the Error() method that returns a string value! 
