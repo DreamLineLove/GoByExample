@@ -6,20 +6,24 @@ import (
 )
 
 func Regular_Expressions() {
-	printRegexOperation("a", "rawyueryuiqwery", "Should match if a is in the str")
+	printRegexOperation("a", "rawyueryuiqwery", "Should match if a is in the str", true)
 
-	printRegexOperation("^a", "rawyueryuiqwery", "Should match only if the str starts with a (doesn't matter if the str contains any a's)")
+	printRegexOperation("^a", "rawyueryuiqwery", "Should match only if the str starts with a (doesn't matter if the str contains any a's)", false)
+
+	printRegexOperation("yoma$", "bank of yoma", "Should match at the end of string", true)
+	printRegexOperation("yoma$", "yoma bank", "should not match", false)
 }
 
-func printRegexOperation(exp, str, desc string) (err error) {
+func printRegexOperation(pattern, str, desc string, exp bool) (err error) {
 	fmt.Print("#\t", desc, "\n")
-	fmt.Println("pattern:  ", exp)
+	fmt.Println("pattern:  ", pattern)
 	fmt.Println("string:   ", str)
-	if matched, err := regexp.MatchString(exp, str); err != nil {
+	fmt.Println("- expected output:   ", exp)
+	if matched, err := regexp.MatchString(pattern, str); err != nil {
 		fmt.Println()
 		return fmt.Errorf("error while regex-matching: %w", err)
 	} else {
-		fmt.Println("-matched: ", matched)
+		fmt.Println("\t- matched:   ", matched)
 		fmt.Println()
 		return nil
 	}
