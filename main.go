@@ -5,6 +5,8 @@ import (
 
 	"github.com/DreamLineLove/GoByExample/Errors"
 	"github.com/DreamLineLove/GoByExample/Hello_World"
+	"github.com/DreamLineLove/GoByExample/Regular_Expressions"
+	"github.com/DreamLineLove/GoByExample/Sort"
 	"github.com/DreamLineLove/GoByExample/Structs_Methods_Interfaces"
 )
 
@@ -23,5 +25,13 @@ func main() {
 	write_title("Errors")
 	Errors.Errors()
 	Errors.Custom_errors()
+	new_line()
+
+	write_title("Sort")
+	Sort.Sort()
+	new_line()
+
+	write_title("Regular Expressions")
+	Regular_Expressions.Regular_Expressions()
 	new_line()
 }

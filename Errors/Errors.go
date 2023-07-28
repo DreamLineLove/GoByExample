@@ -72,15 +72,11 @@ func simple_error_return(message string, should_return bool) (string, error) {
 	}
 }
 
-func return_error(name string) error {
-	return errors.New(name)
-}
-
 func complex_error_return(should_return bool) error {
 	if should_return {
-		database := return_error("database error!")
-		fetch := return_error("fetch failed!")
-		fileOpen := return_error("unable to open file!")
+		database := fmt.Errorf("database error!")
+		fetch := fmt.Errorf("failed to fetch!")
+		fileOpen := fmt.Errorf("unable to open file!")
 		return fmt.Errorf("outer error, inner errors: %w %w %w", database, fetch, fileOpen)
 	} else {
 		return nil
